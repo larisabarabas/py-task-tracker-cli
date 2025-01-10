@@ -8,7 +8,7 @@ import json
 # -u or --update for updating a task
 
 def create_parser():
-    parser = argparse.ArgumentParser(description='Task Tracker')
+    parser = argparse.ArgumentParser(prog="task-tracker",description='Task Tracker')
     parser.add_argument('-a', "--add", metavar="", help="Add a task")
     parser.add_argument('-l', "--list", action="store_true", help="List all tasks")
     parser.add_argument('-d', "--delete",metavar="", help="Delete a task")
@@ -74,7 +74,7 @@ def main():
     elif args.update:
         update_task(int(args.update))
     else:
-        parser.print.help()
+        parser.print_help()
 
 if __name__ == '__main__':
     main()
